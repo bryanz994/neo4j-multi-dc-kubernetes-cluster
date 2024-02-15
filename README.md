@@ -20,6 +20,10 @@ All the templates in this repo follow a similar folder structure.
 
 ## **Prerequisites**
 
+### awscli
+To access AWS services with the AWS CLI, you need an AWS account and IAM credentials. When running AWS CLI commands, the AWS CLI needs to have access to those AWS credentials. 
+Refer to this guide to install [awscli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
 ### eksctl
 
 You will need to have AWS API credentials configured. What works for AWS CLI or any other tools (kops, Terraform, etc.) should be sufficient. 
