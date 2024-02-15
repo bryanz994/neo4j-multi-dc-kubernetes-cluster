@@ -2,6 +2,9 @@
 
 This repo provides [Helm](https://helm.sh/) charts and [Kubernetes] values files as a reference to deploy Multi-DC Neo4j Graph Data Platform across Kubernetes Clusters in Amazon Web Services (AWS).
 
+## Multi-DC Architecture (FOR TEST ONLY, not for PROD)
+<img width="884" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/bf25dbdf-d4a0-4070-8295-e02572ac5c86">
+
 ## **Folder structure**
 
 All the templates in this repo follow a similar folder structure.
@@ -83,6 +86,8 @@ aws eks update-kubeconfig --name cluster-name-2
 4. Create Network Load Balancer in primary EKS cluster
 
 ```
+aws eks update-kubeconfig --name cluster-name
+kubectl config set-context --current --namespace=neo4j
 kubectl apply -f lb-1-cluster-name.yaml
 kubectl apply -f lb-2-cluster-name.yaml
 kubectl apply -f lb-3-cluster-name.yaml
@@ -91,6 +96,8 @@ kubectl apply -f lb-3-cluster-name.yaml
 5. Create Network Load Balancer in secondary EKS cluster
 
 ```
+aws eks update-kubeconfig --name cluster-name-2
+kubectl config set-context --current --namespace=neo4j
 kubectl apply -f lb-1-cluster-name-2.yaml
 ```
 
