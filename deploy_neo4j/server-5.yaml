@@ -22,9 +22,8 @@ services:
 config:
   dbms.cluster.discovery.resolver_type: LIST
   dbms.cluster.discovery.endpoints: "18.138.97.124:5000, 52.221.4.101:5000, 3.0.169.199:5000, 54.169.164.54:5000, 18.143.230.170:5000, 52.220.195.243:5000"
-  server.discovery.advertised_address: "3.0.169.199:5000"
-  server.cluster.advertised_address: "3.0.169.199:6000"
-  server.cluster.raft.advertised_address: "3.0.169.199:7000"
-  server.bolt.advertised_address: "3.0.169.199:7687"
-  server.routing.advertised_address: "3.0.169.199:7688"
-
+  server.discovery.advertised_address: "18.143.230.170:5000"
+  server.cluster.advertised_address: "18.143.230.170:6000"
+  server.cluster.raft.advertised_address: "18.143.230.170:7000"
+  server.bolt.advertised_address: "18.143.230.170:7687"
+  server.routing.advertised_address: "18.143.230.170:7688"

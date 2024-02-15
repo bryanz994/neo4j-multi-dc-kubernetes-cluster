@@ -21,7 +21,7 @@ services:
     multiCluster: true
 config:
   dbms.cluster.discovery.resolver_type: LIST
-  dbms.cluster.discovery.endpoints: "52.221.4.101:5000, 54.169.164.54:5000, 3.0.169.199:5000, 18.138.97.124:5000"
+  dbms.cluster.discovery.endpoints: "18.138.97.124:5000, 52.221.4.101:5000, 3.0.169.199:5000, 54.169.164.54:5000, 18.143.230.170:5000, 52.220.195.243:5000"
   server.discovery.advertised_address: "54.169.164.54:5000"
   server.cluster.advertised_address: "54.169.164.54:6000"
   server.cluster.raft.advertised_address: "54.169.164.54:7000"
