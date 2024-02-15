@@ -3,7 +3,7 @@
 This repo provides [Helm](https://helm.sh/) charts and [Kubernetes] values files as a reference to deploy Multi-DC Neo4j Graph Data Platform across Kubernetes Clusters in Amazon Web Services (AWS).
 
 ## Multi-DC Architecture (FOR TEST ONLY, not for PROD)
-<img width="1368" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/ac0d2065-b83f-4387-a4f9-dc7ed6752607">
+<img width="1356" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/8c01a3d6-0460-4d68-aa9b-f7578afa3036">
 
 
 ## **Folder structure**
