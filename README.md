@@ -3,7 +3,8 @@
 This repo provides [Helm](https://helm.sh/) charts and [Kubernetes] values files as a reference to deploy Multi-DC Neo4j Graph Data Platform across Kubernetes Clusters in Amazon Web Services (AWS).
 
 ## Multi-DC Architecture (FOR TEST ONLY, not for PROD)
-<img width="884" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/bf25dbdf-d4a0-4070-8295-e02572ac5c86">
+<img width="1368" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/ac0d2065-b83f-4387-a4f9-dc7ed6752607">
+
 
 ## **Folder structure**
 
@@ -46,7 +47,7 @@ Systems Manager	Limited: List, Read
 ## **Steps**
 
 1. Create primary EKS cluster
-2. Create secondary EKS cluster
+2. Create secondary (second and third) EKS cluster
    1. Populate the VPC & Subnet IDs based on the VPC created from the first Kubernetes cluster
    2. Note: This will deploy the new Kubernetes cluster in the existing VPC
 3. Create neo4j namespace
@@ -58,9 +59,10 @@ Systems Manager	Limited: List, Read
 <img width="927" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/234211ef-135d-4fff-9f52-c2b3e13ae3e9">
 
 7. Neo4j Deployment - primary EKS cluster
-8. Neo4j Deployment - secondary EKS cluster
+8. Neo4j Deployment - secondary (second and third) EKS cluster
 9. Verify Cluster Formation
-<img width="819" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/f263565a-f2ac-493c-aad9-0db9a52317e3">
+<img width="1407" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/bffbde52-a745-4b21-a726-347a048e25ca">
+
 
 <br>
 
