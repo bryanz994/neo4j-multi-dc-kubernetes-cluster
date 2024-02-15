@@ -44,9 +44,14 @@ Systems Manager	Limited: List, Read
    2. Note: This will deploy the new Kubernetes cluster in the existing VPC
 3. Create neo4j namespace
 4. Deploy Network Load Balancers
-5. Retrieve ingress IP address from ingress DNS
-6. Neo4j Deployment - primary EKS cluster
-7. Neo4j Deployment - secondary EKS cluster
+5. Retrieve External-IP 
+<img width="927" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/4d4e14e2-ae2e-4425-8cd5-d737a6812b5c">
+6. Retrieve ingress IP address from ingress DNS
+<img width="927" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/234211ef-135d-4fff-9f52-c2b3e13ae3e9">
+7. Neo4j Deployment - primary EKS cluster
+8. Neo4j Deployment - secondary EKS cluster
+9. Verify Cluster Formation
+<img width="819" alt="image" src="https://github.com/bryanz994/neo4j-multi-dc-kubernetes-cluster/assets/19281954/f263565a-f2ac-493c-aad9-0db9a52317e3">
 
 <br>
 
