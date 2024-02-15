@@ -73,6 +73,7 @@ Systems Manager	Limited: List, Read
 ```
 eksctl create cluster -f create-cluster.yaml
 eksctl create cluster -f create-cluster-2.yaml
+eksctl create cluster -f create-cluster-3.yaml
 ```
 
 2. Create neo4j namespace in both EKS clusters and switch to the neo4j namespace
@@ -87,6 +88,7 @@ kubectl config set-context --current --namespace=neo4j
 ```
 aws eks update-kubeconfig --name cluster-name
 aws eks update-kubeconfig --name cluster-name-2
+aws eks update-kubeconfig --name cluster-name-3
 ```
 
 4. Create Network Load Balancer in primary EKS cluster
@@ -96,15 +98,20 @@ aws eks update-kubeconfig --name cluster-name
 kubectl config set-context --current --namespace=neo4j
 kubectl apply -f lb-1-cluster-name.yaml
 kubectl apply -f lb-2-cluster-name.yaml
-kubectl apply -f lb-3-cluster-name.yaml
 ```
 
-5. Create Network Load Balancer in secondary EKS cluster
+5. Create Network Load Balancer in secondary (second and third) EKS cluster
 
 ```
 aws eks update-kubeconfig --name cluster-name-2
 kubectl config set-context --current --namespace=neo4j
-kubectl apply -f lb-1-cluster-name-2.yaml
+kubectl apply -f lb-3-cluster-name-2.yaml
+kubectl apply -f lb-4-cluster-name-2.yaml
+
+aws eks update-kubeconfig --name cluster-name-3
+kubectl config set-context --current --namespace=neo4j
+kubectl apply -f lb-5-cluster-name-3.yaml
+kubectl apply -f lb-6-cluster-name-3.yaml
 ```
 
 6. Deploy neo4j in primary EKS cluster
@@ -114,14 +121,19 @@ aws eks update-kubeconfig --name cluster-name
 kubectl config set-context --current --namespace=neo4j
 helm install server-1 neo4j/neo4j -f server-1.yaml
 helm install server-2 neo4j/neo4j -f server-2.yaml 
-helm install server-3 neo4j/neo4j -f server-3.yaml 
 ```
 
-7. Deploy neo4j in secondary EKS cluster
+7. Deploy neo4j in secondary (second and third) EKS cluster
 
 ```
 aws eks update-kubeconfig --name cluster-name-2
 kubectl config set-context --current --namespace=neo4j
+helm install server-3 neo4j/neo4j -f server-3.yaml 
 helm install server-4 neo4j/neo4j -f server-4.yaml
+
+aws eks update-kubeconfig --name cluster-name-3
+kubectl config set-context --current --namespace=neo4j
+helm install server-5 neo4j/neo4j -f server-5.yaml 
+helm install server-6 neo4j/neo4j -f server-6.yaml
 ```
 <br>
