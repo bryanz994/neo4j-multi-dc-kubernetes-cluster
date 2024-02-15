@@ -1,0 +1,29 @@
+neo4j:
+  name: multicluster
+  minimumClusterSize: 3
+  acceptLicenseAgreement: "yes"
+  edition: enterprise
+  resources:
+    cpu: "0.5"
+    memory: "2Gi"
+  password: "neo4j123"
+volumes:
+  data:
+    mode: "dynamic"
+    dynamic:
+      storageClassName: gp2
+services:
+  neo4j:
+    annotations:
+      service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+      service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+    enabled: false
+    multiCluster: true
+config:
+  dbms.cluster.discovery.resolver_type: LIST
+  dbms.cluster.discovery.endpoints: "52.221.4.101:5000, 54.169.164.54:5000, 3.0.169.199:5000, 18.138.97.124:5000"
+  server.discovery.advertised_address: "18.138.97.124:5000"
+  server.cluster.advertised_address: "18.138.97.124:6000"
+  server.cluster.raft.advertised_address: "18.138.97.124:7000"
+  server.bolt.advertised_address: "18.138.97.124:7687"
+  server.routing.advertised_address: "18.138.97.124:7688"
